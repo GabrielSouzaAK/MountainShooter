@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 import pygame
 
-from PygameUni.code.menu import Menu
+from code.menu import Menu
 
 
 class Game:
