@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-
+from code.Const import WIN_WIDHT, ENTITY_SPEED
 from code.entity import Entity
 
 
@@ -9,4 +9,7 @@ class Background(Entity):
         super().__init__(name, position)
 
     def move(self, ):
+        self.rect.centerx -= ENTITY_SPEED[self.name]
+        if self.rect.right < 0:
+            self.rect.left = WIN_WIDHT
         pass

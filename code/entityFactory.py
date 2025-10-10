@@ -1,5 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+from code.Const import WIN_WIDHT
 from code.background import Background
 
 
@@ -10,6 +11,7 @@ class EntityFactory:
         match entity_name:
             case 'Level1Bg':
                 list_bg = []
-                for i in range(8):
-                    list_bg.append(Background(f'Level1Bg{i}', (0,0)))
+                for i in range(7):
+                    list_bg.append(Background(f'Level1Bg{i}', (0, 0)))
+                    list_bg.append(Background(f'Level1Bg{i}', (WIN_WIDHT, 0)))
                 return list_bg
