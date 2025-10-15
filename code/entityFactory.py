@@ -1,7 +1,11 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-from code.Const import WIN_WIDHT
+import random
+
+from code.Const import WIN_WIDHT, WIN_HEIGHT
 from code.background import Background
+from code.enemy import Enemy
+from code.player import Player
 
 
 class EntityFactory:
@@ -15,3 +19,11 @@ class EntityFactory:
                     list_bg.append(Background(f'Level1Bg{i}', (0, 0)))
                     list_bg.append(Background(f'Level1Bg{i}', (WIN_WIDHT, 0)))
                 return list_bg
+            case 'ShipP1':
+                return Player('ShipP1', (10, WIN_HEIGHT / 2 - 30))
+            case 'ShipP2':
+                return Player('ShipP2', (10, WIN_HEIGHT / 2 + 30))
+            case 'Enemy1':
+                return Enemy('Enemy1', (WIN_WIDHT + 10, random.randint(40, WIN_HEIGHT - 40)))
+            case 'Enemy2':
+                return Enemy('Enemy2', (WIN_WIDHT + 10, random.randint(40, WIN_HEIGHT - 40)))
