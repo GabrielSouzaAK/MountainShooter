@@ -9,6 +9,7 @@ from pygame.surface import Surface
 from code.Const import WIN_HEIGHT, COLOR_WHITE, MENU_OPTION, EVENT_ENEMY, SPAWN_TIME
 from code.entity import Entity
 from code.entityFactory import EntityFactory
+from code.entityMediator import EntityMediator
 
 
 class Level:
@@ -28,7 +29,6 @@ class Level:
 
     def run(self):
         pygame.mixer_music.load(f'./asset/{self.name}.mp3')
-
         pygame.mixer_music.play(-1)
         clock = pygame.time.Clock()
         while True:
@@ -49,6 +49,9 @@ class Level:
             self.level_text(14, f'fps: {clock.get_fps() :.0f}', COLOR_WHITE, (10, WIN_HEIGHT - 35))
             self.level_text(14, f'entidades: {len(self.entity_list)}', COLOR_WHITE, (10, WIN_HEIGHT - 20))
             pygame.display.flip()
+            # collisions
+            EntityMediator.verify_collision(entity_list=self.entity_list)
+            EntityMediator.verify_health(entity_list=self.entity_list)
             pass
 
     def level_text(self, text_size: int, text: str, text_color: tuple, text_pos: tuple):
