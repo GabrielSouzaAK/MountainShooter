@@ -17,7 +17,9 @@ ENTITY_SPEED = {
     'Level1Bg5': 5,
     'Level1Bg6': 6,
     'ShipP1': 3,
+    'ShipP1Shot': 1,
     'ShipP2': 3,
+    'ShipP2Shot': 1,
     'Enemy1': 2,
     'Enemy2': 1,
 }
@@ -31,7 +33,9 @@ ENTITY_HEALTH = {
     'Level1Bg5': 999,
     'Level1Bg6': 999,
     'ShipP1': 300,
+    'ShipP1Shot': 1,
     'ShipP2': 300,
+    'Player2Shot': 1,
     'Enemy1': 50,
     'Enemy2': 60,
 }

@@ -7,9 +7,11 @@ from pygame.font import Font
 from pygame.rect import Rect
 from pygame.surface import Surface
 from code.Const import WIN_HEIGHT, COLOR_WHITE, MENU_OPTION, EVENT_ENEMY, SPAWN_TIME
+from code.enemy import Enemy
 from code.entity import Entity
 from code.entityFactory import EntityFactory
 from code.entityMediator import EntityMediator
+from code.player import Player
 
 
 class Level:
@@ -25,8 +27,6 @@ class Level:
             self.entity_list.append(EntityFactory.get_entity('ShipP2'))
         pygame.time.set_timer(EVENT_ENEMY, SPAWN_TIME)
 
-
-
     def run(self):
         pygame.mixer_music.load(f'./asset/{self.name}.mp3')
         pygame.mixer_music.play(-1)
@@ -36,6 +36,10 @@ class Level:
             for ent in self.entity_list:
                 self.window.blit(source=ent.surf, dest=ent.rect)
                 ent.move()
+                if isinstance(ent, (Player, Enemy)):
+                    shoot = ent.shoot()
+                    if shoot is not None:
+                        self.entity_list.append(shoot)
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
