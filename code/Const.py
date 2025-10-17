@@ -10,6 +10,7 @@ C_CYAN = (0, 128, 128)
 
 # E
 EVENT_ENEMY = pygame.USEREVENT + 1
+EVENT_TIMEOUT = pygame.USEREVENT + 2
 ENTITY_SPEED = {
     'Level1Bg0': 0,
     'Level1Bg1': 1,
@@ -18,6 +19,11 @@ ENTITY_SPEED = {
     'Level1Bg4': 4,
     'Level1Bg5': 5,
     'Level1Bg6': 6,
+    'Level2Bg0': 0,
+    'Level2Bg1': 1,
+    'Level2Bg2': 2,
+    'Level2Bg3': 3,
+    'Level2Bg4': 4,
     'ShipP1': 3,
     'ShipP1Shot': 1,
     'ShipP2': 3,
@@ -36,6 +42,11 @@ ENTITY_HEALTH = {
     'Level1Bg4': 999,
     'Level1Bg5': 999,
     'Level1Bg6': 999,
+    'Level2Bg0': 999,
+    'Level2Bg1': 999,
+    'Level2Bg2': 999,
+    'Level2Bg3': 999,
+    'Level2Bg4': 999,
     'ShipP1': 300,
     'ShipP1Shot': 1,
     'ShipP2': 300,
@@ -54,6 +65,11 @@ ENTITY_DAMAGE = {
     'Level1Bg4': 0,
     'Level1Bg5': 0,
     'Level1Bg6': 0,
+    'Level2Bg0': 0,
+    'Level2Bg1': 0,
+    'Level2Bg2': 0,
+    'Level2Bg3': 0,
+    'Level2Bg4': 0,
     'ShipP1': 1,
     'ShipP1Shot': 25,
     'ShipP2': 1,
@@ -115,6 +131,10 @@ PLAYER_KEY_SHOOT = {'ShipP1': pygame.K_RCTRL,
 
 # S
 SPAWN_TIME = 4000
+
+# T
+TIMEOUT_LEVEL = 50000 # 20s
+TIMEOUT_STEP = 100 # 100ms
 
 # W
 WIN_WIDHT = 576
