@@ -47,9 +47,9 @@ ENTITY_HEALTH = {
     'Level2Bg2': 999,
     'Level2Bg3': 999,
     'Level2Bg4': 999,
-    'ShipP1': 300,
+    'ShipP1': 100,
     'ShipP1Shot': 1,
-    'ShipP2': 300,
+    'ShipP2': 100,
     'ShipP2Shot': 1,
     'Enemy1': 50,
     'Enemy1Shot': 1,
@@ -133,7 +133,7 @@ PLAYER_KEY_SHOOT = {'ShipP1': pygame.K_RCTRL,
 SPAWN_TIME = 4000
 
 # T
-TIMEOUT_LEVEL = 20000  # 20s
+TIMEOUT_LEVEL = 40000  # 20s
 TIMEOUT_STEP = 100  # 100ms
 
 # W
